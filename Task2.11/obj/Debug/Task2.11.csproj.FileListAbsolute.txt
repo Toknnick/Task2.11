@@ -1,0 +1,7 @@
+C:\Users\Максим\source\repos\Task2.11\Task2.11\bin\Debug\Task2.11.exe.config
+C:\Users\Максим\source\repos\Task2.11\Task2.11\bin\Debug\Task2.11.exe
+C:\Users\Максим\source\repos\Task2.11\Task2.11\bin\Debug\Task2.11.pdb
+C:\Users\Максим\source\repos\Task2.11\Task2.11\obj\Debug\Task2.11.csproj.AssemblyReference.cache
+C:\Users\Максим\source\repos\Task2.11\Task2.11\obj\Debug\Task2.11.csproj.CoreCompileInputs.cache
+C:\Users\Максим\source\repos\Task2.11\Task2.11\obj\Debug\Task2.11.exe
+C:\Users\Максим\source\repos\Task2.11\Task2.11\obj\Debug\Task2.11.pdb
