@@ -1,54 +1,59 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task2._11
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            int bracketBalance = 0;
-            int minStreak = 1;
-            int streak = 1;
-            int maxStreak = 1;
-            char previousSymbol = ' '; 
-            string brackets = ")((()))";
+            string backets = "(()(()))";
+            bool isRight = false;
+            bool isWrong = false;
+            int depthOfBackets = 0;
+            char[] expressionOfBackets = backets.ToCharArray();
 
-            if (brackets[0] == '(' && brackets[brackets.Length - 1] == ')')
+            while (isRight == false && isWrong == false)
             {
-                foreach (var symbol in brackets)
+                string tempString = "";
+                depthOfBackets++;
+
+                for (int i = 0; i < expressionOfBackets.Length - 1; i++)
                 {
-                    if (symbol == '(')
-                        bracketBalance++;
-                    else
-                        bracketBalance--;
-
-                    if (bracketBalance < 0)
+                    if (expressionOfBackets[i] == '(' && expressionOfBackets[i + 1] == ')')
                     {
-                        Console.WriteLine("Закрывающих скобок больше.");
-                        break;
+                        expressionOfBackets[i] = '.';
+                        expressionOfBackets[i + 1] = '.';
                     }
-
-                    if (symbol == previousSymbol)
-                        streak++;
-                    else
-                        streak = minStreak;
-
-                    if (streak > maxStreak)
-                        maxStreak = streak;
                 }
 
-                if (bracketBalance == 0)
-                    Console.WriteLine($"Строка корректная и макс глубина - {maxStreak}");
-                else
-                    Console.WriteLine("Открыващих скобок больше.");
+                foreach (char symbol in expressionOfBackets)
+                {
+                    if (symbol != '.')
+                    {
+                        tempString += symbol;
+                    }
+                }
+
+                if (tempString == "")
+                {
+                    isRight = true;
+                }
+
+                if (expressionOfBackets.Length == tempString.Length)
+                {
+                    isWrong = true;
+                }
+
+                expressionOfBackets = tempString.ToCharArray();
             }
-            else
+
+            if (isRight == true)
             {
-                Console.WriteLine("Нельзя начинать с ')' или заканчивать '('.");
+                Console.WriteLine($"Скобки расставлены правильно\nМаксимальная глубина скобок: {depthOfBackets}");
+            }
+            else if (isWrong == true)
+            {
+                Console.WriteLine("Скобки расставлены неправильно");
             }
         }
     }
